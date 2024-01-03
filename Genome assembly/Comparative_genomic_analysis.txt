@@ -1,0 +1,9 @@
+#!/bin/bash
+#Gene_family_clustering
+orthofinder -f data \ #protein.fa
+    -S diamond \ 
+    -M msa \ 
+    -T fasttree 
+    -t 5 
+#phylogenetic tree
+raxml-ng --all --model LG+I+G+F -msa ALL.phy --outgroup Dmel
